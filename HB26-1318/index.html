@@ -813,6 +813,83 @@
       text-decoration: none;
     }
 
+    /* ── FAQ ── */
+    .faq-section {
+      background: var(--cream);
+      border-top: 4px solid var(--orange);
+    }
+
+    .faq-intro { max-width: 680px; margin-bottom: 40px; }
+    .faq-intro .divider { background: var(--orange); }
+    .faq-intro p {
+      color: var(--mid);
+      font-size: 0.975rem;
+      line-height: 1.75;
+    }
+
+    .faq-list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      max-width: 880px;
+    }
+
+    .faq-item {
+      background: var(--white);
+      border-radius: 8px;
+      border: 1.5px solid #E0DDD6;
+      overflow: hidden;
+      transition: border-color 0.15s;
+    }
+
+    .faq-item[open] { border-color: var(--orange); }
+
+    .faq-item summary {
+      list-style: none;
+      cursor: pointer;
+      padding: 18px 22px;
+      font-weight: 600;
+      font-size: 1rem;
+      color: var(--dark);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      transition: color 0.15s;
+    }
+
+    .faq-item summary::-webkit-details-marker { display: none; }
+
+    .faq-item summary::after {
+      content: '+';
+      font-size: 1.4rem;
+      color: var(--orange);
+      font-weight: 300;
+      line-height: 1;
+      flex-shrink: 0;
+    }
+
+    .faq-item[open] summary::after { content: '−'; }
+    .faq-item summary:hover { color: var(--orange); }
+
+    .faq-body {
+      padding: 0 22px 22px;
+      color: var(--mid);
+      font-size: 0.925rem;
+      line-height: 1.7;
+    }
+
+    .faq-body p { margin-bottom: 10px; }
+    .faq-body p:last-child { margin-bottom: 0; }
+
+    .faq-body a {
+      color: var(--orange);
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    .faq-body a:hover { text-decoration: underline; }
+
     /* ── FOOTER ── */
     footer {
       background: var(--dark-soft);
@@ -884,6 +961,7 @@
       <li><a href="#school-streets">School Streets</a></li>
       <li><a href="#testify">How to Testify</a></li>
       <li><a href="#draft">Draft Testimony</a></li>
+      <li><a href="#faq">FAQ</a></li>
       <li><a href="#testify" class="nav-cta">Testify Now →</a></li>
     </ul>
   </nav>
@@ -1313,6 +1391,170 @@ Thank you.
           </div>
           <p class="draft-note">After copying, paste directly into the written comment field at <a href="https://sites.coleg.gov/public-testimony/sign-up-to-testify/step-1" target="_blank" rel="noopener">sites.coleg.gov/public-testimony →</a></p>
         </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq-section" id="faq">
+    <div class="container">
+      <div class="faq-intro">
+        <div class="section-label">Common Questions</div>
+        <h2 class="section-title">FAQ</h2>
+        <div class="divider"></div>
+        <p>
+          Things people have asked about HB26-1318, the Senate hearing, and how to show up.
+          Don't see your question? Written testimony is always welcome — even a two-sentence comment helps.
+        </p>
+      </div>
+
+      <div class="faq-list">
+
+        <details class="faq-item">
+          <summary>Will this mandate a 10 mph speed limit in all school zones?</summary>
+          <div class="faq-body">
+            <p>
+              <strong>No.</strong> The School Street designation is a completely optional program and
+              only applies when a city chooses to implement it. It's typically intended for quiet
+              residential streets directly next to schools — not for arterials or every school zone
+              statewide.
+            </p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>Are cities banned from reducing the size of school zones under this bill?</summary>
+          <div class="faq-body">
+            <p>
+              <strong>No.</strong> Cities can still reduce the size of a school zone — they just have
+              to hold a public hearing before doing so. The bill adds transparency, not a prohibition.
+            </p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>Is there any cost to cities to implement this law?</summary>
+          <div class="faq-body">
+            <p>
+              <strong>No.</strong> There are no fiscal impacts to cities from this bill. It simply
+              gives cities more options — the definitions, School Street framework, and relaxed
+              camera siting rules are all opt-in tools, not mandates.
+            </p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>What exactly is a "School Street"?</summary>
+          <div class="faq-body">
+            <p>
+              An <em>optional</em> legal designation a city can apply to a residential street directly
+              adjacent to a school. When applied, the street has a 10 mph speed limit, pedestrians and
+              cyclists always have right-of-way, the street can optionally be closed to motor vehicles
+              during arrival/dismissal, and required signage makes the rules unambiguous to drivers.
+            </p>
+            <p>
+              Modeled on Washington State's SB 5595 and on the ~200 School Streets Paris has
+              implemented since 2020. More detail in the
+              <a href="#school-streets">School Streets section above</a>.
+            </p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>Why is the Senate hearing this if the House already passed it?</summary>
+          <div class="faq-body">
+            <p>
+              In Colorado, a bill has to pass both chambers before it can go to the governor's desk.
+              HB26-1318 cleared the House earlier in this session. The Senate Transportation &amp; Energy
+              Committee is its first stop on the Senate side. If they vote it out favorably, it moves
+              to the full Senate floor, and then — assuming any differences between the two chambers
+              are reconciled — to the governor for signature.
+            </p>
+            <p>
+              That makes this committee hearing a genuine decision point. Enough "no" votes here
+              and the bill stops moving.
+            </p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>Do I have to live in Colorado to submit testimony?</summary>
+          <div class="faq-body">
+            <p>
+              <strong>Written comments:</strong> anyone can submit, regardless of where they live.
+              <strong>In-person or remote (Zoom) testimony:</strong> anyone can sign up, but Colorado
+              residents and directly-affected parties generally get priority if the queue is long.
+              If you live in Colorado, say which city in your testimony — it matters to the committee.
+            </p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>What if I can't be there exactly at 1:30 PM?</summary>
+          <div class="faq-body">
+            <p>
+              Committee agendas frequently shift. Your bill might be heard on time, thirty minutes late,
+              or two hours late depending on what the committee takes up first. Plan to arrive
+              15–20 minutes early to check in, then be prepared to wait.
+            </p>
+            <p>
+              If your schedule genuinely won't accommodate that, <strong>remote (Zoom)</strong>
+              testimony lets you join from anywhere, and <strong>written testimony</strong> carries
+              real weight without any time commitment. You can also sign up for multiple formats.
+            </p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>How long will I have to speak, and is my testimony public?</summary>
+          <div class="faq-body">
+            <p>
+              Each person typically gets <strong>3 minutes</strong> (sometimes shortened to 2 if the
+              queue is long — the chair will announce at the start of the hearing). Practice reading
+              your remarks out loud first; 3 minutes is about 400–420 words at a natural pace.
+            </p>
+            <p>
+              Yes, it's public. Hearings are recorded, streamed live, and archived on the
+              <a href="https://leg.colorado.gov" target="_blank" rel="noopener">Colorado General Assembly site</a>.
+              Written comments become part of the public record. Don't include personal information
+              beyond your name and city.
+            </p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>What happens if the Senate committee passes HB26-1318?</summary>
+          <div class="faq-body">
+            <p>
+              It moves to the full Senate floor for a vote. After the Senate passes it, any differences
+              between the House and Senate versions are reconciled — sometimes through a conference
+              committee — and the final version goes to the governor's desk.
+            </p>
+            <p>
+              If the Senate committee votes it <em>down</em>, the bill effectively dies for this session.
+              That's why this hearing matters.
+            </p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>I'm not comfortable speaking publicly — what else can I do?</summary>
+          <div class="faq-body">
+            <p>
+              Plenty. In rough order of impact:
+            </p>
+            <p>
+              1. <strong>Submit written testimony</strong> — every committee member reads them, and a
+              short personal message carries more weight than a longer generic one.<br>
+              2. <strong>Email your state senator directly</strong> (find them at
+              <a href="https://leg.colorado.gov" target="_blank" rel="noopener">leg.colorado.gov</a>).<br>
+              3. <strong>Show up without speaking</strong> — visible support in the room is noticed.<br>
+              4. <strong>Share this page</strong> with other parents or neighbors who might testify.<br>
+              5. <strong>Help someone else prepare</strong> — proofread their draft, practice delivery with them.
+            </p>
+          </div>
+        </details>
 
       </div>
     </div>
