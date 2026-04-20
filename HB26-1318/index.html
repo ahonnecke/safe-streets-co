@@ -1,0 +1,1363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Support HB26-1318 · Safe Schools Colorado</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --yellow:    #F5C842;
+      --orange:    #E8541A;
+      --dark:      #1A1A18;
+      --dark-soft: #252521;
+      --cream:     #F7F3EC;
+      --mid:       #6B6B60;
+      --white:     #FFFFFF;
+      --green:     #2D6A4F;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--cream);
+      color: var(--dark);
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 400;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* ── HEADER BANNER ── */
+    .urgent-banner {
+      background: var(--orange);
+      color: var(--white);
+      text-align: center;
+      padding: 10px 24px;
+      font-weight: 600;
+      font-size: 0.875rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    nav {
+      background: var(--dark);
+      padding: 16px 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .nav-logo {
+      color: var(--yellow);
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      text-decoration: none;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 32px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: rgba(255,255,255,0.7);
+      text-decoration: none;
+      font-size: 0.875rem;
+      font-weight: 500;
+      letter-spacing: 0.02em;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover { color: var(--yellow); }
+
+    .nav-cta {
+      background: var(--yellow);
+      color: var(--dark) !important;
+      padding: 8px 20px;
+      border-radius: 4px;
+      font-weight: 600 !important;
+      transition: background 0.2s !important;
+    }
+
+    .nav-cta:hover { background: var(--orange) !important; color: var(--white) !important; }
+
+    /* ── HERO ── */
+    .hero {
+      background: var(--dark);
+      min-height: 88vh;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: stretch;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-text {
+      padding: 80px 60px 80px 80px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero-eyebrow {
+      display: inline-block;
+      background: var(--orange);
+      color: var(--white);
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 5px 14px;
+      border-radius: 2px;
+      margin-bottom: 28px;
+      width: fit-content;
+    }
+
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.8rem, 5vw, 4.8rem);
+      font-weight: 900;
+      line-height: 1.05;
+      color: var(--white);
+      margin-bottom: 24px;
+      letter-spacing: -0.02em;
+    }
+
+    .hero h1 em {
+      color: var(--yellow);
+      font-style: italic;
+    }
+
+    .hero-sub {
+      color: rgba(255,255,255,0.65);
+      font-size: 1.05rem;
+      max-width: 440px;
+      margin-bottom: 44px;
+      line-height: 1.7;
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--yellow);
+      color: var(--dark);
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 1rem;
+      padding: 16px 32px;
+      border-radius: 4px;
+      width: fit-content;
+      transition: transform 0.15s, background 0.15s;
+      letter-spacing: 0.01em;
+    }
+
+    .btn-primary:hover {
+      background: var(--orange);
+      color: var(--white);
+      transform: translateY(-2px);
+    }
+
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      border: 1.5px solid rgba(255,255,255,0.3);
+      color: rgba(255,255,255,0.75);
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 0.9rem;
+      padding: 14px 28px;
+      border-radius: 4px;
+      width: fit-content;
+      margin-top: 16px;
+      transition: border-color 0.2s, color 0.2s;
+    }
+
+    .btn-secondary:hover {
+      border-color: var(--yellow);
+      color: var(--yellow);
+    }
+
+    .hero-visual {
+      position: relative;
+      background: var(--dark-soft);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    /* SVG illustration area — road scene */
+    .hero-visual svg {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+
+    .hero-date-card {
+      background: var(--yellow);
+      color: var(--dark);
+      border-radius: 8px;
+      padding: 28px 32px;
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      width: 260px;
+      box-shadow: 0 24px 60px rgba(0,0,0,0.4);
+    }
+
+    .hero-date-card .month {
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--orange);
+      margin-bottom: 4px;
+    }
+
+    .hero-date-card .day {
+      font-family: 'Playfair Display', serif;
+      font-size: 4.5rem;
+      font-weight: 900;
+      line-height: 1;
+      color: var(--dark);
+    }
+
+    .hero-date-card .label {
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: var(--dark);
+      margin-top: 8px;
+      line-height: 1.4;
+    }
+
+    .hero-date-card .time-note {
+      margin-top: 16px;
+      background: var(--dark);
+      color: var(--yellow);
+      border-radius: 4px;
+      padding: 8px 12px;
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+    }
+
+    /* ── SECTION COMMON ── */
+    section { padding: 80px 0; }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 40px;
+    }
+
+    .section-label {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--orange);
+      margin-bottom: 16px;
+    }
+
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+      font-weight: 700;
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+      margin-bottom: 20px;
+    }
+
+    /* ── WHAT'S THE BILL ── */
+    .bill-section {
+      background: var(--white);
+      border-top: 4px solid var(--yellow);
+    }
+
+    .bill-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: start;
+    }
+
+    .bill-intro p {
+      color: var(--mid);
+      font-size: 1rem;
+      line-height: 1.75;
+      margin-bottom: 16px;
+    }
+
+    .bill-intro a {
+      color: var(--orange);
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    .bill-intro a:hover { text-decoration: underline; }
+
+    .supporters {
+      margin-top: 28px;
+      padding: 20px 24px;
+      background: var(--cream);
+      border-radius: 6px;
+      font-size: 0.875rem;
+      color: var(--mid);
+    }
+
+    .supporters strong { color: var(--dark); }
+
+    .provisions {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .provision-card {
+      background: var(--cream);
+      border-left: 3px solid var(--yellow);
+      border-radius: 0 6px 6px 0;
+      padding: 20px 24px;
+    }
+
+    .provision-card h4 {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--dark);
+      margin-bottom: 8px;
+    }
+
+    .provision-card p {
+      font-size: 0.875rem;
+      color: var(--mid);
+      line-height: 1.65;
+    }
+
+    /* ── SCHOOL STREETS ── */
+    .streets-section {
+      background: var(--dark);
+      color: var(--white);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .streets-section::before {
+      content: 'SCHOOL STREETS';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-family: 'Playfair Display', serif;
+      font-size: 14vw;
+      font-weight: 900;
+      color: rgba(255,255,255,0.03);
+      white-space: nowrap;
+      pointer-events: none;
+    }
+
+    .streets-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+      position: relative;
+      z-index: 2;
+    }
+
+    .streets-text .section-title {
+      color: var(--white);
+    }
+
+    .streets-text .section-title em {
+      color: var(--yellow);
+      font-style: italic;
+    }
+
+    .streets-text p {
+      color: rgba(255,255,255,0.65);
+      font-size: 0.975rem;
+      line-height: 1.75;
+      margin-bottom: 16px;
+    }
+
+    .streets-text a {
+      color: var(--yellow);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .streets-rules {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .rule-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      background: rgba(255,255,255,0.05);
+      border-radius: 8px;
+      padding: 18px 20px;
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .rule-icon {
+      font-size: 1.5rem;
+      flex-shrink: 0;
+      width: 36px;
+      text-align: center;
+    }
+
+    .rule-text h5 {
+      color: var(--yellow);
+      font-size: 0.825rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin-bottom: 4px;
+    }
+
+    .rule-text p {
+      color: rgba(255,255,255,0.6);
+      font-size: 0.875rem;
+      line-height: 1.5;
+      margin: 0 !important;
+    }
+
+    .paris-note {
+      margin-top: 28px;
+      background: rgba(245, 200, 66, 0.12);
+      border: 1px solid rgba(245, 200, 66, 0.25);
+      border-radius: 6px;
+      padding: 18px 20px;
+      font-size: 0.875rem;
+      color: rgba(255,255,255,0.65);
+    }
+
+    .paris-note strong { color: var(--yellow); }
+
+    /* ── HOW TO TESTIFY ── */
+    .testify-section {
+      background: var(--cream);
+    }
+
+    .testify-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: start;
+    }
+
+    .testify-steps {
+      counter-reset: steps;
+    }
+
+    .step {
+      counter-increment: steps;
+      display: flex;
+      gap: 20px;
+      align-items: flex-start;
+      margin-bottom: 28px;
+      position: relative;
+    }
+
+    .step::before {
+      content: counter(steps);
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: var(--orange);
+      color: var(--white);
+      font-weight: 700;
+      font-size: 0.875rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .step-body h4 {
+      font-weight: 700;
+      font-size: 0.975rem;
+      color: var(--dark);
+      margin-bottom: 6px;
+    }
+
+    .step-body p {
+      font-size: 0.875rem;
+      color: var(--mid);
+      line-height: 1.6;
+    }
+
+    .step-body code {
+      background: var(--dark);
+      color: var(--yellow);
+      padding: 2px 8px;
+      border-radius: 3px;
+      font-size: 0.85rem;
+      font-family: monospace;
+      font-weight: 700;
+    }
+
+    .testify-options {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .option-card {
+      background: var(--white);
+      border-radius: 8px;
+      padding: 28px 28px;
+      border: 1.5px solid transparent;
+      transition: border-color 0.2s;
+    }
+
+    .option-card:hover { border-color: var(--yellow); }
+
+    .option-card.best {
+      border-color: var(--orange);
+      position: relative;
+    }
+
+    .best-badge {
+      position: absolute;
+      top: -10px;
+      right: 20px;
+      background: var(--orange);
+      color: var(--white);
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 3px 10px;
+      border-radius: 20px;
+    }
+
+    .option-card h4 {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--dark);
+      margin-bottom: 8px;
+    }
+
+    .option-card p {
+      font-size: 0.875rem;
+      color: var(--mid);
+      line-height: 1.65;
+      margin-bottom: 16px;
+    }
+
+    .option-card .btn-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      color: var(--orange);
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 0.875rem;
+      transition: gap 0.15s;
+    }
+
+    .option-card .btn-link:hover { gap: 10px; }
+
+    /* ── TIMING CALLOUT ── */
+    .timing-box {
+      background: var(--dark);
+      color: var(--white);
+      border-radius: 8px;
+      padding: 32px 36px;
+      margin-top: 40px;
+    }
+
+    .timing-box h4 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.3rem;
+      margin-bottom: 12px;
+      color: var(--yellow);
+    }
+
+    .timing-box p {
+      font-size: 0.9rem;
+      color: rgba(255,255,255,0.65);
+      line-height: 1.7;
+    }
+
+    /* ── CTA FOOTER ── */
+    .cta-section {
+      background: var(--yellow);
+      padding: 80px 0;
+      text-align: center;
+    }
+
+    .cta-section .section-title {
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      max-width: 700px;
+      margin: 0 auto 28px;
+    }
+
+    .cta-section p {
+      color: rgba(26,26,24,0.7);
+      max-width: 500px;
+      margin: 0 auto 36px;
+      font-size: 1rem;
+    }
+
+    .cta-buttons {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .btn-dark {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--dark);
+      color: var(--yellow);
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 1rem;
+      padding: 16px 32px;
+      border-radius: 4px;
+      transition: transform 0.15s, background 0.15s;
+    }
+
+    .btn-dark:hover { background: var(--orange); color: var(--white); transform: translateY(-2px); }
+
+    .btn-outline-dark {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      border: 2px solid var(--dark);
+      color: var(--dark);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.95rem;
+      padding: 14px 28px;
+      border-radius: 4px;
+      transition: background 0.15s;
+    }
+
+    .btn-outline-dark:hover { background: rgba(26,26,24,0.1); }
+
+    /* ── DRAFT TESTIMONY ── */
+    .draft-section {
+      background: var(--white);
+      border-top: 4px solid var(--green);
+    }
+
+    .draft-intro {
+      max-width: 680px;
+      margin-bottom: 40px;
+    }
+
+    .draft-intro p {
+      color: var(--mid);
+      font-size: 0.975rem;
+      line-height: 1.75;
+    }
+
+    .draft-intro .section-title { color: var(--dark); }
+    .draft-intro .divider { background: var(--green); }
+
+    .draft-tabs {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 0;
+      border-bottom: 2px solid #E0DDD6;
+      flex-wrap: wrap;
+    }
+
+    .draft-tab {
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: var(--mid);
+      padding: 10px 20px 12px;
+      position: relative;
+      bottom: -2px;
+      border-bottom: 3px solid transparent;
+      transition: color 0.15s, border-color 0.15s;
+      white-space: nowrap;
+    }
+
+    .draft-tab:hover { color: var(--dark); }
+
+    .draft-tab.active {
+      color: var(--green);
+      border-bottom-color: var(--green);
+    }
+
+    .draft-panels {
+      margin-top: 28px;
+    }
+
+    .draft-panel { display: none; }
+    .draft-panel.active { display: block; }
+
+    .draft-context {
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+      background: #EDF4F0;
+      border-radius: 6px;
+      padding: 14px 18px;
+      margin-bottom: 20px;
+      font-size: 0.85rem;
+      color: var(--green);
+      line-height: 1.55;
+    }
+
+    .draft-context strong { color: #1f4f3a; }
+
+    .draft-box {
+      position: relative;
+      background: var(--cream);
+      border: 1.5px solid #D8D4CC;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    .draft-box textarea {
+      width: 100%;
+      min-height: 260px;
+      padding: 24px 28px;
+      background: transparent;
+      border: none;
+      outline: none;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.9rem;
+      line-height: 1.75;
+      color: var(--dark);
+      resize: vertical;
+    }
+
+    .draft-toolbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 16px;
+      border-top: 1px solid #D8D4CC;
+      background: rgba(255,255,255,0.6);
+    }
+
+    .draft-hint {
+      font-size: 0.78rem;
+      color: var(--mid);
+    }
+
+    .draft-hint em {
+      background: var(--yellow);
+      color: var(--dark);
+      font-style: normal;
+      font-weight: 700;
+      padding: 1px 6px;
+      border-radius: 3px;
+      font-size: 0.72rem;
+    }
+
+    .copy-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      background: var(--dark);
+      color: var(--white);
+      border: none;
+      cursor: pointer;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.82rem;
+      font-weight: 600;
+      padding: 8px 16px;
+      border-radius: 4px;
+      transition: background 0.15s, transform 0.1s;
+    }
+
+    .copy-btn:hover { background: var(--green); transform: translateY(-1px); }
+    .copy-btn.copied { background: var(--green); }
+
+    .draft-note {
+      margin-top: 16px;
+      font-size: 0.825rem;
+      color: var(--mid);
+      line-height: 1.6;
+    }
+
+    .draft-note a {
+      color: var(--orange);
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--dark-soft);
+      color: rgba(255,255,255,0.45);
+      text-align: center;
+      padding: 28px 40px;
+      font-size: 0.825rem;
+      line-height: 1.6;
+    }
+
+    footer a {
+      color: rgba(255,255,255,0.6);
+      text-decoration: none;
+    }
+
+    footer a:hover { color: var(--yellow); }
+
+    /* ── DIVIDER ── */
+    .divider {
+      width: 48px;
+      height: 3px;
+      background: var(--yellow);
+      margin: 20px 0 32px;
+    }
+
+    /* ── ANIMATIONS ── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .hero-text > * {
+      animation: fadeUp 0.6s ease both;
+    }
+
+    .hero-eyebrow { animation-delay: 0.1s; }
+    .hero h1      { animation-delay: 0.2s; }
+    .hero-sub     { animation-delay: 0.3s; }
+    .btn-primary  { animation-delay: 0.4s; }
+    .btn-secondary { animation-delay: 0.45s; }
+
+    .hero-date-card {
+      animation: fadeUp 0.7s 0.3s ease both;
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 800px) {
+      .hero { grid-template-columns: 1fr; }
+      .hero-visual { display: none; }
+      .hero-text { padding: 60px 28px; }
+      .bill-grid, .streets-inner, .testify-grid { grid-template-columns: 1fr; gap: 40px; }
+      nav { padding: 14px 20px; }
+      .nav-links { display: none; }
+      .container { padding: 0 24px; }
+      section { padding: 60px 0; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="urgent-banner">
+    ⚡ Senate Hearing: Wednesday, April 22 — 1:30 PM, Room SCR 352 — Your voice is needed now
+  </div>
+
+  <nav>
+    <a class="nav-logo" href="#">Safe Schools Colorado</a>
+    <ul class="nav-links">
+      <li><a href="#bill">The Bill</a></li>
+      <li><a href="#school-streets">School Streets</a></li>
+      <li><a href="#testify">How to Testify</a></li>
+      <li><a href="#draft">Draft Testimony</a></li>
+      <li><a href="#testify" class="nav-cta">Testify Now →</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-text">
+      <span class="hero-eyebrow">Colorado HB26-1318</span>
+      <h1>Safe Routes.<br><em>Safer Schools.</em><br>Act Now.</h1>
+      <p class="hero-sub">
+        A bill to define school zones, enable automated speed enforcement near schools,
+        and create a statewide framework for <strong style="color:#fff">School Streets</strong> —
+        where kids and bikes always come first.
+      </p>
+      <a class="btn-primary" href="https://sites.coleg.gov/public-testimony/sign-up-to-testify/step-1" target="_blank" rel="noopener">
+        Sign Up to Testify →
+      </a>
+      <a class="btn-secondary" href="#bill">Learn about the bill ↓</a>
+    </div>
+    <div class="hero-visual">
+      <!-- Decorative background road pattern -->
+      <svg viewBox="0 0 600 800" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+        <rect width="600" height="800" fill="#1e1e1a"/>
+        <!-- Road -->
+        <rect x="200" y="0" width="200" height="800" fill="#2a2a26"/>
+        <!-- Dashed center line -->
+        <rect x="297" y="0"   width="6" height="80"  fill="rgba(245,200,66,0.35)" rx="3"/>
+        <rect x="297" y="120" width="6" height="80"  fill="rgba(245,200,66,0.35)" rx="3"/>
+        <rect x="297" y="240" width="6" height="80"  fill="rgba(245,200,66,0.35)" rx="3"/>
+        <rect x="297" y="360" width="6" height="80"  fill="rgba(245,200,66,0.35)" rx="3"/>
+        <rect x="297" y="480" width="6" height="80"  fill="rgba(245,200,66,0.35)" rx="3"/>
+        <rect x="297" y="600" width="6" height="80"  fill="rgba(245,200,66,0.35)" rx="3"/>
+        <rect x="297" y="720" width="6" height="80"  fill="rgba(245,200,66,0.35)" rx="3"/>
+        <!-- Crosswalk stripes -->
+        <rect x="200" y="340" width="36" height="120" fill="rgba(255,255,255,0.07)"/>
+        <rect x="248" y="340" width="36" height="120" fill="rgba(255,255,255,0.07)"/>
+        <rect x="316" y="340" width="36" height="120" fill="rgba(255,255,255,0.07)"/>
+        <rect x="364" y="340" width="36" height="120" fill="rgba(255,255,255,0.07)"/>
+        <!-- Sidewalk trees (left) -->
+        <circle cx="160" cy="180" r="40" fill="rgba(45,106,79,0.35)"/>
+        <rect   cx="160" x="156" y="200" width="8" height="60" fill="rgba(255,255,255,0.1)"/>
+        <circle cx="160" cy="420" r="35" fill="rgba(45,106,79,0.25)"/>
+        <circle cx="160" cy="640" r="45" fill="rgba(45,106,79,0.3)"/>
+        <!-- Sidewalk trees (right) -->
+        <circle cx="440" cy="260" r="38" fill="rgba(45,106,79,0.3)"/>
+        <circle cx="440" cy="520" r="42" fill="rgba(45,106,79,0.35)"/>
+        <circle cx="440" cy="720" r="30" fill="rgba(45,106,79,0.2)"/>
+        <!-- Bike silhouettes -->
+        <circle cx="230" cy="520" r="18" fill="none" stroke="rgba(245,200,66,0.5)" stroke-width="3"/>
+        <circle cx="270" cy="520" r="18" fill="none" stroke="rgba(245,200,66,0.5)" stroke-width="3"/>
+        <line x1="230" y1="520" x2="250" y2="496" stroke="rgba(245,200,66,0.5)" stroke-width="2.5"/>
+        <line x1="250" y1="496" x2="270" y2="520" stroke="rgba(245,200,66,0.5)" stroke-width="2.5"/>
+        <line x1="250" y1="496" x2="252" y2="480" stroke="rgba(245,200,66,0.5)" stroke-width="2.5"/>
+        <!-- School zone sign shape -->
+        <path d="M380 120 L420 120 L440 145 L420 170 L380 170 L360 145 Z" fill="rgba(232,84,26,0.3)" stroke="rgba(232,84,26,0.5)" stroke-width="1.5"/>
+        <text x="400" y="150" text-anchor="middle" fill="rgba(255,255,255,0.6)" font-size="9" font-family="DM Sans, sans-serif" font-weight="700">SCHOOL</text>
+        <text x="400" y="162" text-anchor="middle" fill="rgba(255,255,255,0.6)" font-size="9" font-family="DM Sans, sans-serif" font-weight="700">ZONE</text>
+      </svg>
+
+      <div class="hero-date-card">
+        <div class="month">April 2026</div>
+        <div class="day">22</div>
+        <div class="label">Colorado Senate Transportation<br>&amp; Energy Committee</div>
+        <div class="time-note">1:30 PM · Room SCR 352</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- THE BILL -->
+  <section class="bill-section" id="bill">
+    <div class="container">
+      <div class="bill-grid">
+        <div class="bill-intro">
+          <div class="section-label">About the Legislation</div>
+          <h2 class="section-title">What is HB26-1318?</h2>
+          <div class="divider"></div>
+          <p>
+            <a href="https://leg.colorado.gov/bills/HB26-1318" target="_blank" rel="noopener">Colorado HB26-1318</a> 
+            addresses a long-standing gap in state law: Colorado has never clearly defined what a "school zone" actually is.
+            This bill fixes that — and adds teeth to protect kids getting to and from school on foot or by bike.
+          </p>
+          <p>
+            The bill defines school zones as all roadways within at least <strong>500 feet</strong> of a school property boundary. 
+            Within those zones, traffic penalties are already doubled under existing law — but enforcement 
+            has been hampered by vague definitions and burdensome requirements.
+          </p>
+          <p>
+            This bill is supported by <strong>Bicycle Colorado</strong>, <strong>AAA Colorado</strong>, and other advocacy organizations.
+          </p>
+          <div class="supporters">
+            <strong>Bill Number:</strong> HB26-1318 &nbsp;·&nbsp; <strong>Status:</strong> Passed House — now in Senate &nbsp;·&nbsp; <strong>Next Hearing:</strong> Senate Transportation &amp; Energy, Wed Apr 22, 1:30 PM, SCR 352
+          </div>
+        </div>
+        <div class="provisions">
+          <div class="provision-card">
+            <h4>🏫 Clear "School Zone" Definition</h4>
+            <p>
+              Establishes in state law that a school zone covers all roadways within at least 500 feet 
+              of a school property boundary — giving cities and counties a consistent, enforceable standard.
+            </p>
+          </div>
+          <div class="provision-card">
+            <h4>📷 Smarter Automated Enforcement</h4>
+            <p>
+              Streamlines requirements for automated vehicle identification systems (speed cameras) 
+              on Safe Routes to School. Currently, municipalities must document a <em>5-year crash history</em> 
+              before deployment — this bill waives that requirement on designated safe routes to school.
+            </p>
+          </div>
+          <div class="provision-card">
+            <h4>⚖️ Updated Traffic Penalty Framework</h4>
+            <p>
+              Adds and updates definitions that allow school zone protections to be consistently applied 
+              and enforced across the state, removing ambiguity for law enforcement and courts.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SCHOOL STREETS AMENDMENT -->
+  <section class="streets-section" id="school-streets">
+    <div class="container">
+      <div class="streets-inner">
+        <div class="streets-text">
+          <div class="section-label">Proposed Amendment</div>
+          <h2 class="section-title">Bringing <em>School Streets</em> to Colorado</h2>
+          <div class="divider"></div>
+          <p>
+            Advocates are working on a proposed amendment that would create a legal framework for 
+            <strong style="color:#fff">School Streets</strong> — local roads directly adjacent to schools where 
+            kids, pedestrians, and cyclists get the right of way.
+          </p>
+          <p>
+            The amendment is modeled directly on <a href="https://fastdemocracy.com/bill-search/wa/2025-2026/bills/WAB00023201/" target="_blank" rel="noopener">Washington State's SB 5595</a> 
+            and adapted for Colorado. It creates a foundation for a statewide 
+            shared streets program in the future.
+          </p>
+          <p>
+            A trial School Street was already piloted at Brown Elementary — 
+            <a href="https://www.brownbikebus.com/brown-school-street" target="_blank" rel="noopener">read about that experience here.</a>
+          </p>
+          <div class="paris-note">
+            <strong>🗼 Inspired by global models:</strong> School Streets like those in Paris and 
+            other major cities have dramatically improved safety and increased the number of kids 
+            who walk and bike to school. This amendment brings that framework to Colorado law.
+          </div>
+        </div>
+        <div class="streets-rules">
+          <div class="rule-item">
+            <div class="rule-icon">🚦</div>
+            <div class="rule-text">
+              <h5>10 mph Max Speed</h5>
+              <p>The maximum speed limit on a School Street is 10 mph — making it genuinely safe for kids.</p>
+            </div>
+          </div>
+          <div class="rule-item">
+            <div class="rule-icon">🚶</div>
+            <div class="rule-text">
+              <h5>Pedestrians Always Have Priority</h5>
+              <p>Motor vehicle drivers must always yield to both pedestrians and cyclists. Cyclists yield to pedestrians.</p>
+            </div>
+          </div>
+          <div class="rule-item">
+            <div class="rule-icon">🚗</div>
+            <div class="rule-text">
+              <h5>Option to Close to Cars</h5>
+              <p>Streets can be closed to motor vehicles entirely — giving schools the flexibility to create car-free arrival and dismissal zones.</p>
+            </div>
+          </div>
+          <div class="rule-item">
+            <div class="rule-icon">📋</div>
+            <div class="rule-text">
+              <h5>Pedestrian Restrictions Lifted</h5>
+              <p>Laws that prohibit pedestrians from crossing or lingering in roadways don't apply on School Streets — students can move freely and safely.</p>
+            </div>
+          </div>
+          <div class="rule-item">
+            <div class="rule-icon">🪧</div>
+            <div class="rule-text">
+              <h5>Clear, Required Signage</h5>
+              <p>School Streets must have clear signage indicating the designation, speed limit, and right-of-way rules.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW TO TESTIFY -->
+  <section class="testify-section" id="testify">
+    <div class="container">
+      <div class="section-label">Take Action</div>
+      <h2 class="section-title">How to Make Your Voice Heard</h2>
+      <div class="divider"></div>
+
+      <div class="testify-grid">
+        <div>
+          <div class="testify-steps">
+            <div class="step">
+              <div class="step-body">
+                <h4>Go to the official testimony signup</h4>
+                <p>Visit <a href="https://sites.coleg.gov/public-testimony/sign-up-to-testify/step-1" target="_blank" rel="noopener" style="color:var(--orange);font-weight:600;">sites.coleg.gov/public-testimony</a> — the Colorado legislature's official sign-up portal.</p>
+              </div>
+            </div>
+            <div class="step">
+              <div class="step-body">
+                <h4>Enter the bill number</h4>
+                <p>Type <code>HB26-1318</code> into the bill number field.</p>
+              </div>
+            </div>
+            <div class="step">
+              <div class="step-body">
+                <h4>Find the hearing and click "Select ›"</h4>
+                <p>Scroll down to find the <strong>Senate Transportation &amp; Energy Committee</strong> hearing on <strong>Wednesday, April 22 at 1:30 PM</strong> (Room SCR 352) and select it.</p>
+              </div>
+            </div>
+            <div class="step">
+              <div class="step-body">
+                <h4>Complete your sign-up</h4>
+                <p>Fill in your information and choose your testimony format: in-person, remote (Zoom), or written comment.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="timing-box">
+            <h4>⏱ Hearing Time &amp; Location</h4>
+            <p>
+              <strong style="color:#fff">Wednesday, April 22 at 1:30 PM</strong> in <strong style="color:#fff">Room SCR 352</strong>
+              at the Colorado State Capitol. Unlike the House hearing, this one has a fixed start time —
+              plan to arrive 15–20 minutes early to check in. The bill order on the agenda may shift, so
+              build in flexibility. <strong style="color:#fff">Written testimony</strong> is always a strong
+              option if you can't be there live.
+            </p>
+          </div>
+        </div>
+
+        <div class="testify-options">
+          <div class="option-card best">
+            <div class="best-badge">Most Impactful</div>
+            <h4>🎤 Testify In Person</h4>
+            <p>
+              Showing up in person at the Capitol is the most powerful way to support the bill. 
+              You'll have <strong>3 minutes</strong> to speak (sometimes shortened to 2 — the chair will announce). 
+              As a bike bus leader or volunteer, your firsthand experience is exactly what the committee needs to hear.
+            </p>
+            <a class="btn-link" href="https://sites.coleg.gov/public-testimony/sign-up-to-testify/step-1" target="_blank" rel="noopener">Sign up to testify →</a>
+          </div>
+
+          <div class="option-card best">
+            <div class="best-badge">Also Impactful</div>
+            <h4>💻 Testify Remotely (Zoom)</h4>
+            <p>
+              Can't make it to the Capitol? Remote testimony via Zoom is still powerful. Same 3-minute format, 
+              same direct impact on committee members. Sign up through the same portal.
+            </p>
+            <a class="btn-link" href="https://sites.coleg.gov/public-testimony/sign-up-to-testify/step-1" target="_blank" rel="noopener">Sign up to testify →</a>
+          </div>
+
+          <div class="option-card">
+            <h4>✍️ Submit Written Testimony</h4>
+            <p>
+              If live testimony doesn't fit your schedule, written comments through the online form still 
+              matter — every submission is read by committee members. A few sentences from a bike bus 
+              parent or volunteer can make a real difference.
+            </p>
+            <a class="btn-link" href="https://sites.coleg.gov/public-testimony/sign-up-to-testify/step-1" target="_blank" rel="noopener">Submit written comment →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DRAFT TESTIMONY -->
+  <section class="draft-section" id="draft">
+    <div class="container">
+      <div class="draft-intro">
+        <div class="section-label">Written Testimony</div>
+        <h2 class="section-title">Base Draft Language</h2>
+        <div class="divider"></div>
+        <p>
+          Not sure what to write? Use one of these drafts as a starting point — 
+          then personalize it with your own experience. Even a short, personal message 
+          carries more weight than a longer generic one. Brackets indicate where to fill in your own details.
+        </p>
+      </div>
+
+      <div class="draft-tabs">
+        <button class="draft-tab active" onclick="switchTab(event, 'general')">General Supporter</button>
+        <button class="draft-tab" onclick="switchTab(event, 'parent')">Parent / Family</button>
+        <button class="draft-tab" onclick="switchTab(event, 'bikebus')">Bike Bus Leader / Volunteer</button>
+        <button class="draft-tab" onclick="switchTab(event, 'amendment')">Focused on School Streets Amendment</button>
+      </div>
+
+      <div class="draft-panels">
+
+        <!-- GENERAL -->
+        <div class="draft-panel active" id="panel-general">
+          <div class="draft-context">
+            <span>💡</span>
+            <span><strong>Best for:</strong> Community members, neighbors, anyone who supports safer streets near schools but doesn't have a specific personal story to share.</span>
+          </div>
+          <div class="draft-box">
+            <textarea id="text-general">Dear Chair and Members of the Senate Transportation & Energy Committee,
+
+I am writing in strong support of HB26-1318, which would define school zones in Colorado law and strengthen protections for children traveling to and from school. The bill has already passed the House, and I urge this committee to advance it as well.
+
+It is long overdue for Colorado to establish a clear, consistent definition of school zones. Without one, the safety protections already on the books — such as doubled traffic penalties — cannot be applied reliably or equitably across the state.
+
+I also support the proposed amendment to create a "School Street" designation. Giving local communities the option to establish low-speed, pedestrian- and cyclist-priority streets adjacent to schools is a common-sense step that cities around the world have already taken with documented safety benefits.
+
+I respectfully urge the committee to pass HB26-1318 with the School Street amendment included.
+
+Thank you for your consideration.
+
+[Your Name]
+[City, CO]</textarea>
+            <div class="draft-toolbar">
+              <span class="draft-hint">Edit freely · <em>personalize</em> for more impact</span>
+              <button class="copy-btn" onclick="copyText('text-general', this)">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
+                Copy
+              </button>
+            </div>
+          </div>
+          <p class="draft-note">After copying, paste directly into the written comment field at <a href="https://sites.coleg.gov/public-testimony/sign-up-to-testify/step-1" target="_blank" rel="noopener">sites.coleg.gov/public-testimony →</a></p>
+        </div>
+
+        <!-- PARENT -->
+        <div class="draft-panel" id="panel-parent">
+          <div class="draft-context">
+            <span>💡</span>
+            <span><strong>Best for:</strong> Parents and caregivers who walk, bike, or drive kids to school and have direct experience with unsafe conditions near school buildings.</span>
+          </div>
+          <div class="draft-box">
+            <textarea id="text-parent">Dear Chair and Members of the Senate Transportation & Energy Committee,
+
+I am writing to support HB26-1318 as a parent of [number] children who attend [school name] in [city]. The bill has already passed the House — please advance it through the Senate as well.
+
+Every school day, I see firsthand how dangerous the streets near our school can be. [Add a specific observation — e.g., speeding drivers, no crosswalk markings, unsafe drop-off conditions.] The lack of a clear, legally defined school zone makes it harder for the city to address these problems and for drivers to understand their responsibilities.
+
+HB26-1318 would establish that definition and allow for better enforcement — including allowing automated speed enforcement on Safe Routes to School without the current bureaucratic hurdles. These are straightforward changes that could prevent serious injuries.
+
+I also urge the committee to support the School Street amendment. Having a legal option for low-speed, pedestrian-first streets directly adjacent to schools would make a meaningful difference for families like mine.
+
+Thank you for your time and for prioritizing the safety of Colorado's children.
+
+[Your Name]
+[City, CO]</textarea>
+            <div class="draft-toolbar">
+              <span class="draft-hint">Edit freely · <em>personalize</em> for more impact</span>
+              <button class="copy-btn" onclick="copyText('text-parent', this)">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
+                Copy
+              </button>
+            </div>
+          </div>
+          <p class="draft-note">After copying, paste directly into the written comment field at <a href="https://sites.coleg.gov/public-testimony/sign-up-to-testify/step-1" target="_blank" rel="noopener">sites.coleg.gov/public-testimony →</a></p>
+        </div>
+
+        <!-- BIKE BUS -->
+        <div class="draft-panel" id="panel-bikebus">
+          <div class="draft-context">
+            <span>💡</span>
+            <span><strong>Best for:</strong> Bike bus leaders, volunteers, and organizers. Your direct experience with kids biking to school is uniquely persuasive — the committee wants to hear this.</span>
+          </div>
+          <div class="draft-box">
+            <textarea id="text-bikebus">Dear Chair and Members of the Senate Transportation & Energy Committee,
+
+I am a [leader / volunteer / organizer] with the [name of bike bus or school] bike bus in [city]. I am writing in strong support of HB26-1318 and the proposed School Street amendment. The bill cleared the House and now needs your committee's support to keep moving.
+
+Our bike bus brings [number or approximate number] kids to school by bicycle each [week / month]. Every time we ride, we navigate the streets immediately surrounding our school — and those streets are among the most dangerous parts of our entire route. Drivers routinely [describe what you observe: speed, fail to yield, block crosswalks, etc.].
+
+A clearly defined school zone in state law, paired with the ability to deploy automated enforcement on Safe Routes to School, would make a real difference. The current requirement that municipalities document a five-year crash history before installing a speed camera is a barrier that keeps our kids less safe while paperwork accumulates.
+
+I am especially excited about the School Street amendment. We conducted a trial School Street at [Brown / your school] and the results were clear: when drivers know the rules and the street is designed for kids first, everyone is safer and more kids participate. This amendment gives communities the legal tools to make that permanent.
+
+I urge the committee to pass HB26-1318 with the School Street amendment.
+
+Thank you for your service to Colorado's families.
+
+[Your Name]
+[Role / Organization]
+[City, CO]</textarea>
+            <div class="draft-toolbar">
+              <span class="draft-hint">Edit freely · <em>personalize</em> for more impact</span>
+              <button class="copy-btn" onclick="copyText('text-bikebus', this)">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
+                Copy
+              </button>
+            </div>
+          </div>
+          <p class="draft-note">After copying, paste directly into the written comment field at <a href="https://sites.coleg.gov/public-testimony/sign-up-to-testify/step-1" target="_blank" rel="noopener">sites.coleg.gov/public-testimony →</a></p>
+        </div>
+
+        <!-- AMENDMENT FOCUSED -->
+        <div class="draft-panel" id="panel-amendment">
+          <div class="draft-context">
+            <span>💡</span>
+            <span><strong>Best for:</strong> Anyone who wants to focus specifically on asking the committee to adopt the School Streets amendment, modeled on Washington's SB 5595.</span>
+          </div>
+          <div class="draft-box">
+            <textarea id="text-amendment">Dear Chair and Members of the Senate Transportation & Energy Committee,
+
+I am writing to support HB26-1318 and to urge the committee to adopt the proposed School Street amendment. The bill has already passed the House; the Senate's vote is the next step.
+
+The amendment would allow local roads directly adjacent to schools to be designated as "School Streets" — with a 10 mph speed limit, mandatory right-of-way for pedestrians and cyclists, the option to close the street to motor vehicles entirely, and clear required signage. This is modeled directly on Washington State's SB 5595 and aligns Colorado with cities around the world — including Paris — that have demonstrated significant safety improvements with this approach.
+
+Colorado already conducted a successful trial at Brown Elementary School. The framework works. What's missing is the legal foundation to make it a permanent, statewide option.
+
+Beyond the immediate safety benefits, the School Street designation creates a foundation for a broader statewide shared streets program. Passing this amendment now is an investment in how Colorado will approach street design near schools for decades to come.
+
+I urge the committee to include the School Street amendment in HB26-1318 and to advance the bill.
+
+Thank you.
+
+[Your Name]
+[City, CO]</textarea>
+            <div class="draft-toolbar">
+              <span class="draft-hint">Edit freely · <em>personalize</em> for more impact</span>
+              <button class="copy-btn" onclick="copyText('text-amendment', this)">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
+                Copy
+              </button>
+            </div>
+          </div>
+          <p class="draft-note">After copying, paste directly into the written comment field at <a href="https://sites.coleg.gov/public-testimony/sign-up-to-testify/step-1" target="_blank" rel="noopener">sites.coleg.gov/public-testimony →</a></p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="cta-section">
+    <div class="container">
+      <h2 class="section-title">Ready to stand up for safer streets?</h2>
+      <p>It takes just a few minutes to sign up. Your voice — especially as a bike bus leader or volunteer — carries real weight with this committee.</p>
+      <div class="cta-buttons">
+        <a class="btn-dark" href="https://sites.coleg.gov/public-testimony/sign-up-to-testify/step-1" target="_blank" rel="noopener">Sign Up to Testify →</a>
+        <a class="btn-outline-dark" href="https://leg.colorado.gov/bills/HB26-1318" target="_blank" rel="noopener">Read the Full Bill</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>Supporting <strong>HB26-1318</strong> &nbsp;·&nbsp; Colorado Senate Transportation &amp; Energy Committee &nbsp;·&nbsp; April 22, 2026 · 1:30 PM · SCR 352</p>
+    <p style="margin-top:8px;">
+      <a href="https://leg.colorado.gov/bills/HB26-1318" target="_blank" rel="noopener">Full Bill Text</a> &nbsp;·&nbsp;
+      <a href="https://www.brownbikebus.com/brown-school-street" target="_blank" rel="noopener">Brown School Street Pilot</a> &nbsp;·&nbsp;
+      <a href="https://fastdemocracy.com/bill-search/wa/2025-2026/bills/WAB00023201/" target="_blank" rel="noopener">WA SB 5595 (Inspiration)</a>
+    </p>
+  </footer>
+
+  <script>
+    function switchTab(e, id) {
+      document.querySelectorAll('.draft-tab').forEach(t => t.classList.remove('active'));
+      document.querySelectorAll('.draft-panel').forEach(p => p.classList.remove('active'));
+      e.currentTarget.classList.add('active');
+      document.getElementById('panel-' + id).classList.add('active');
+    }
+
+    function copyText(id, btn) {
+      const el = document.getElementById(id);
+      navigator.clipboard.writeText(el.value).then(() => {
+        btn.textContent = '✓ Copied!';
+        btn.classList.add('copied');
+        setTimeout(() => {
+          btn.innerHTML = '<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg> Copy';
+          btn.classList.remove('copied');
+        }, 2000);
+      });
+    }
+  </script>
+</body>
+</html>
