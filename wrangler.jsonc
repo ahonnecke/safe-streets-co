@@ -1,0 +1,14 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "safe-streets-co",
+  "compatibility_date": "2026-05-04",
+  "observability": {
+    "enabled": true
+  },
+  "assets": {
+    "directory": "_site"
+  },
+  "compatibility_flags": [
+    "nodejs_compat"
+  ]
+}
