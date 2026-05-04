@@ -1,0 +1,342 @@
+---
+layout: layouts/base.njk
+---
+{# ────────────────────────────────────────────────────────────────────
+   Bill detail layout. Frontmatter contract (all optional unless noted):
+   - billId            REQUIRED — e.g. "HB26-1318"
+   - title             REQUIRED — full bill heading
+   - status            REQUIRED — active|passed-committee|passed-chamber|signed|dead
+   - oneLiner          REQUIRED — short paragraph for hero subtitle
+   - jurisdiction              — "co" etc; reads jurisdictions in site data
+   - billLink                  — URL to legislator's bill page
+   - sponsor                   — "Rep. X / Sen. Y"
+   - supporters                — list of org names
+   - hearings                  — list of {body,date,time,room,outcome,nextStep}
+   - nextStep                  — string shown on hero card
+   - provisions                — list of {icon,title,body}
+   - feature                   — bill-specific feature section
+                                   {label,title,intro[],rules:[{icon,title,body}],note}
+   - testimonyDrafts           — list of {audience,hint,body}; renders draft section if present
+   - testifyUrl                — public testimony portal URL
+   - faq                       — list of {q, a (markdown)}
+   - showTestify               — boolean override; defaults true if status in active/passed-committee
+   The body of the markdown file is rendered as the bill-intro prose
+   (paragraphs explaining what the bill does).
+   ──────────────────────────────────────────────────────────────────── #}
+
+{% set primaryHearing = hearings[0] %}
+{% set isActive = (status == "active" or status == "passed-committee") %}
+{% set shouldTestify = showTestify if showTestify !== undefined else isActive %}
+
+{# ─── HERO ─── #}
+<section class="hero">
+  <div class="hero-text">
+    <span class="hero-eyebrow {{ status | statusClass }}">
+      {{ billId }} · {{ status | statusLabel }}
+    </span>
+    <h1>{% if heroHeadline %}{{ heroHeadline | safe }}{% else %}{{ title }}{% endif %}</h1>
+    <p class="hero-sub">{{ oneLiner }}</p>
+    {% if shouldTestify and testifyUrl %}
+      <a class="btn-primary" href="{{ testifyUrl }}" target="_blank" rel="noopener">Sign Up to Testify →</a>
+    {% elif billLink %}
+      <a class="btn-primary" href="{{ billLink }}" target="_blank" rel="noopener">Track the bill →</a>
+    {% endif %}
+    <a class="btn-secondary" href="#bill">What this bill does ↓</a>
+  </div>
+
+  <div class="hero-visual">
+    <svg viewBox="0 0 600 800" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+      <rect width="600" height="800" fill="#1e1e1a"/>
+      <rect x="200" y="0" width="200" height="800" fill="#2a2a26"/>
+      {% for y in [0,120,240,360,480,600,720] %}
+        <rect x="297" y="{{ y }}" width="6" height="80" fill="rgba(245,200,66,0.35)" rx="3"/>
+      {% endfor %}
+      <rect x="200" y="340" width="36" height="120" fill="rgba(255,255,255,0.07)"/>
+      <rect x="248" y="340" width="36" height="120" fill="rgba(255,255,255,0.07)"/>
+      <rect x="316" y="340" width="36" height="120" fill="rgba(255,255,255,0.07)"/>
+      <rect x="364" y="340" width="36" height="120" fill="rgba(255,255,255,0.07)"/>
+      <circle cx="160" cy="180" r="40" fill="rgba(45,106,79,0.35)"/>
+      <circle cx="160" cy="420" r="35" fill="rgba(45,106,79,0.25)"/>
+      <circle cx="160" cy="640" r="45" fill="rgba(45,106,79,0.3)"/>
+      <circle cx="440" cy="260" r="38" fill="rgba(45,106,79,0.3)"/>
+      <circle cx="440" cy="520" r="42" fill="rgba(45,106,79,0.35)"/>
+      <circle cx="440" cy="720" r="30" fill="rgba(45,106,79,0.2)"/>
+      <circle cx="230" cy="520" r="18" fill="none" stroke="rgba(245,200,66,0.5)" stroke-width="3"/>
+      <circle cx="270" cy="520" r="18" fill="none" stroke="rgba(245,200,66,0.5)" stroke-width="3"/>
+      <line x1="230" y1="520" x2="250" y2="496" stroke="rgba(245,200,66,0.5)" stroke-width="2.5"/>
+      <line x1="250" y1="496" x2="270" y2="520" stroke="rgba(245,200,66,0.5)" stroke-width="2.5"/>
+      <line x1="250" y1="496" x2="252" y2="480" stroke="rgba(245,200,66,0.5)" stroke-width="2.5"/>
+    </svg>
+
+    {% if primaryHearing %}
+      <div class="hero-date-card">
+        {% if primaryHearing.outcome == "passed" %}
+          <div class="month">{{ primaryHearing.date | shortDate }} · Passed</div>
+          <div class="day">✓</div>
+        {% else %}
+          {% set d = primaryHearing.date | shortDate %}
+          <div class="month">{{ d.split(",")[0] }}</div>
+          <div class="day">{{ primaryHearing.date.split("-")[2] }}</div>
+        {% endif %}
+        <div class="label">{{ primaryHearing.body | safe }}</div>
+        <div class="time-note">
+          {% if primaryHearing.outcome == "passed" and nextStep %}
+            Next: {{ nextStep }}
+          {% elif primaryHearing.time %}
+            {{ primaryHearing.time }}{% if primaryHearing.room %} · {{ primaryHearing.room }}{% endif %}
+          {% endif %}
+        </div>
+      </div>
+    {% endif %}
+  </div>
+</section>
+
+{# ─── BILL SUMMARY + PROVISIONS ─── #}
+<section class="bill-section" id="bill">
+  <div class="container">
+    <div class="bill-grid">
+      <div class="bill-intro">
+        <div class="section-label">About the Legislation</div>
+        <h2 class="section-title">What is {{ billId }}?</h2>
+        <div class="divider"></div>
+        {{ content | safe }}
+        {% if supporters or sponsor or billLink %}
+          <div class="supporters">
+            <strong>Bill:</strong> {{ billId }}
+            {%- if sponsor %} &nbsp;·&nbsp; <strong>Sponsor:</strong> {{ sponsor }}{% endif -%}
+            {%- if status %} &nbsp;·&nbsp; <strong>Status:</strong> {{ status | statusLabel }}{% endif -%}
+            {%- if supporters %} &nbsp;·&nbsp; <strong>Supporters:</strong> {{ supporters | join(", ") }}{% endif -%}
+          </div>
+        {% endif %}
+      </div>
+      {% if provisions %}
+        <div class="provisions">
+          {% for p in provisions %}
+            <div class="provision-card">
+              <h4>{% if p.icon %}{{ p.icon }} {% endif %}{{ p.title }}</h4>
+              <p>{{ p.body | safe }}</p>
+            </div>
+          {% endfor %}
+        </div>
+      {% endif %}
+    </div>
+  </div>
+</section>
+
+{# ─── BILL-SPECIFIC FEATURE SECTION (e.g. School Streets) ─── #}
+{% if feature %}
+  <section class="feature-section" id="feature">
+    {% if feature.bgText %}<div class="feature-bg-text">{{ feature.bgText }}</div>{% endif %}
+    <div class="container">
+      <div class="feature-inner">
+        <div class="feature-text">
+          {% if feature.label %}<div class="section-label">{{ feature.label }}</div>{% endif %}
+          <h2 class="section-title">{{ feature.title | safe }}</h2>
+          <div class="divider"></div>
+          {% for para in feature.intro %}<p>{{ para | safe }}</p>{% endfor %}
+          {% if feature.note %}
+            <div class="callout-note">{{ feature.note | safe }}</div>
+          {% endif %}
+        </div>
+        {% if feature.rules %}
+          <div class="feature-rules">
+            {% for r in feature.rules %}
+              <div class="rule-item">
+                <div class="rule-icon">{{ r.icon }}</div>
+                <div class="rule-text">
+                  <h5>{{ r.title }}</h5>
+                  <p>{{ r.body | safe }}</p>
+                </div>
+              </div>
+            {% endfor %}
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  </section>
+{% endif %}
+
+{# ─── HOW TO TESTIFY ─── #}
+{% if shouldTestify and testifyUrl and primaryHearing %}
+  <section class="testify-section" id="testify">
+    <div class="container">
+      <div class="section-label">Take Action</div>
+      <h2 class="section-title">How to Make Your Voice Heard</h2>
+      <div class="divider"></div>
+
+      <div class="testify-grid">
+        <div>
+          <div class="testify-steps">
+            <div class="step">
+              <div class="step-body">
+                <h4>Go to the official testimony signup</h4>
+                <p>Visit <a href="{{ testifyUrl }}" target="_blank" rel="noopener" style="color:var(--orange);font-weight:600;">the Colorado public testimony portal</a>.</p>
+              </div>
+            </div>
+            <div class="step">
+              <div class="step-body">
+                <h4>Enter the bill number</h4>
+                <p>Type <code>{{ billId }}</code> into the bill number field.</p>
+              </div>
+            </div>
+            <div class="step">
+              <div class="step-body">
+                <h4>Find the hearing and click "Select ›"</h4>
+                <p>Scroll down to find the <strong>{{ primaryHearing.body | safe }}</strong> hearing
+                {%- if primaryHearing.date %} on <strong>{{ primaryHearing.date | longDate }}{% if primaryHearing.time %} at {{ primaryHearing.time }}{% endif %}</strong>{% endif %}
+                {%- if primaryHearing.room %} ({{ primaryHearing.room }}){% endif %}
+                and select it.</p>
+              </div>
+            </div>
+            <div class="step">
+              <div class="step-body">
+                <h4>Complete your sign-up</h4>
+                <p>Fill in your information and choose your testimony format: in-person, remote (Zoom), or written comment.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="timing-box">
+            <h4>⏱ Hearing Time &amp; Location</h4>
+            <p>
+              {% if primaryHearing.date %}<strong style="color:#fff">{{ primaryHearing.date | longDate }}{% if primaryHearing.time %} at {{ primaryHearing.time }}{% endif %}</strong>{% endif %}
+              {% if primaryHearing.room %} in <strong style="color:#fff">{{ primaryHearing.room }}</strong>{% endif %}
+              at the Colorado State Capitol. Plan to arrive 15–20 minutes early to check in. The bill order on the agenda may shift.
+              <strong style="color:#fff">Written testimony</strong> is always a strong option if you can't be there live.
+            </p>
+          </div>
+        </div>
+
+        <div class="testify-options">
+          <div class="option-card best">
+            <div class="best-badge">Most Impactful</div>
+            <h4>🎤 Testify In Person</h4>
+            <p>Showing up at the Capitol is the most powerful way to support the bill. You'll have <strong>3 minutes</strong> to speak. Your firsthand experience is exactly what the committee needs to hear.</p>
+            <a class="btn-link" href="{{ testifyUrl }}" target="_blank" rel="noopener">Sign up to testify →</a>
+          </div>
+          <div class="option-card best">
+            <div class="best-badge">Also Impactful</div>
+            <h4>💻 Testify Remotely (Zoom)</h4>
+            <p>Can't make it to the Capitol? Remote testimony via Zoom is still powerful. Same 3-minute format, same direct impact on committee members.</p>
+            <a class="btn-link" href="{{ testifyUrl }}" target="_blank" rel="noopener">Sign up to testify →</a>
+          </div>
+          <div class="option-card">
+            <h4>✍️ Submit Written Testimony</h4>
+            <p>If live testimony doesn't fit your schedule, written comments through the online form still matter — every submission is read by committee members.</p>
+            <a class="btn-link" href="{{ testifyUrl }}" target="_blank" rel="noopener">Submit written comment →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+{% endif %}
+
+{# ─── DRAFT TESTIMONY ─── #}
+{% if shouldTestify and testimonyDrafts and testimonyDrafts.length %}
+  <section class="draft-section" id="draft">
+    <div class="container">
+      <div class="draft-intro">
+        <div class="section-label">Written Testimony</div>
+        <h2 class="section-title">Base Draft Language</h2>
+        <div class="divider"></div>
+        <p>Not sure what to write? Use one of these drafts as a starting point — then personalize it with your own experience. Even a short, personal message carries more weight than a longer generic one. Brackets indicate where to fill in your own details.</p>
+      </div>
+
+      <div class="draft-tabs">
+        {% for d in testimonyDrafts %}
+          <button class="draft-tab{% if loop.first %} active{% endif %}" data-target="panel-{{ loop.index }}">{{ d.audience }}</button>
+        {% endfor %}
+      </div>
+
+      <div class="draft-panels">
+        {% for d in testimonyDrafts %}
+          <div class="draft-panel{% if loop.first %} active{% endif %}" id="panel-{{ loop.index }}">
+            {% if d.hint %}
+              <div class="draft-context">
+                <span>💡</span>
+                <span><strong>Best for:</strong> {{ d.hint | safe }}</span>
+              </div>
+            {% endif %}
+            <div class="draft-box">
+              <textarea id="text-{{ loop.index }}">{{ d.body }}</textarea>
+              <div class="draft-toolbar">
+                <span class="draft-hint">Edit freely · <em>personalize</em> for more impact</span>
+                <button class="copy-btn" data-source="text-{{ loop.index }}">Copy</button>
+              </div>
+            </div>
+            {% if testifyUrl %}
+              <p class="draft-note">After copying, paste directly into the written comment field at <a href="{{ testifyUrl }}" target="_blank" rel="noopener">the testimony portal →</a></p>
+            {% endif %}
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+{% endif %}
+
+{# ─── FAQ ─── #}
+{% if faq and faq.length %}
+  <section class="faq-section" id="faq">
+    <div class="container">
+      <div class="faq-intro">
+        <div class="section-label">Common Questions</div>
+        <h2 class="section-title">FAQ</h2>
+        <div class="divider"></div>
+        <p>Things people have asked about {{ billId }}{% if shouldTestify %}, the hearing, and how to show up{% endif %}. Don't see your question? Written testimony is always welcome.</p>
+      </div>
+      <div class="faq-list">
+        {% for item in faq %}
+          <details class="faq-item">
+            <summary>{{ item.q | safe }}</summary>
+            <div class="faq-body">{{ item.a | safe }}</div>
+          </details>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+{% endif %}
+
+{# ─── FINAL CTA ─── #}
+<section class="cta-section">
+  <div class="container">
+    {% if shouldTestify %}
+      <h2 class="section-title">Ready to stand up for safer streets?</h2>
+      <p>It takes just a few minutes to sign up. Your voice carries real weight with this committee.</p>
+      <div class="cta-buttons">
+        {% if testifyUrl %}<a class="btn-dark" href="{{ testifyUrl }}" target="_blank" rel="noopener">Sign Up to Testify →</a>{% endif %}
+        {% if billLink %}<a class="btn-outline-dark" href="{{ billLink }}" target="_blank" rel="noopener">Read the Full Bill</a>{% endif %}
+      </div>
+    {% else %}
+      <h2 class="section-title">Track this bill</h2>
+      <p>{{ billId }} is moving. Follow it on the legislator's page and watch this site for updates.</p>
+      <div class="cta-buttons">
+        {% if billLink %}<a class="btn-dark" href="{{ billLink }}" target="_blank" rel="noopener">Read the Full Bill →</a>{% endif %}
+        <a class="btn-outline-dark" href="/bills/">All Bills</a>
+      </div>
+    {% endif %}
+  </div>
+</section>
+
+{% if testimonyDrafts and testimonyDrafts.length %}
+  <script>
+    document.querySelectorAll('.draft-tab').forEach((tab) => {
+      tab.addEventListener('click', () => {
+        document.querySelectorAll('.draft-tab').forEach(t => t.classList.remove('active'));
+        document.querySelectorAll('.draft-panel').forEach(p => p.classList.remove('active'));
+        tab.classList.add('active');
+        document.getElementById(tab.dataset.target).classList.add('active');
+      });
+    });
+    document.querySelectorAll('.copy-btn').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const el = document.getElementById(btn.dataset.source);
+        navigator.clipboard.writeText(el.value).then(() => {
+          const orig = btn.textContent;
+          btn.textContent = '✓ Copied!';
+          btn.classList.add('copied');
+          setTimeout(() => { btn.textContent = orig; btn.classList.remove('copied'); }, 2000);
+        });
+      });
+    });
+  </script>
+{% endif %}

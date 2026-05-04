@@ -1,0 +1,9 @@
+<footer>
+  <p><strong>{{ site.name }}</strong> — {{ site.tagline }}</p>
+  <p style="margin-top:8px;">
+    <a href="/">Home</a> &nbsp;·&nbsp;
+    <a href="/bills/">All bills</a> &nbsp;·&nbsp;
+    <a href="/about/">About</a>
+    {% if site.email %} &nbsp;·&nbsp; <a href="mailto:{{ site.email }}">{{ site.email }}</a>{% endif %}
+  </p>
+</footer>

@@ -1,0 +1,24 @@
+---
+layout: layouts/base.njk
+title: Bills
+description: Colorado bills tracked by Safe Streets Co.
+permalink: /bills/
+---
+
+<section class="bills-section">
+  <div class="container">
+    <div class="section-label">Bills we're tracking</div>
+    <h2 class="section-title">All Bills</h2>
+    <div class="divider"></div>
+
+    <div class="bill-list">
+      {% for bill in collections.bill %}
+        <a class="bill-card" href="{{ bill.url }}">
+          <span class="bill-card-status {{ bill.data.status | statusClass }}">{{ bill.data.status | statusLabel }}</span>
+          <h3>{{ bill.data.title }}</h3>
+          <p>{{ bill.data.oneLiner }}</p>
+        </a>
+      {% endfor %}
+    </div>
+  </div>
+</section>

@@ -1,0 +1,39 @@
+---
+layout: layouts/base.njk
+title: null
+description: Colorado-first traffic safety advocacy. Bills, hearings, and how to make your voice heard.
+permalink: /
+eleventyComputed:
+  banner:
+    text: '✓ HB26-1318 passed the Senate Transportation &amp; Energy Committee — <a href="/bills/co/HB26-1318/">see the latest</a>'
+    class: passed
+---
+
+<section class="home-hero">
+  <h1>Slower streets.<br><em>Safer kids.</em><br>Stronger neighborhoods.</h1>
+  <p>
+    {{ site.name }} tracks Colorado bills that make our streets safer for the
+    people who use them most — kids walking and biking to school, neighbors
+    crossing the road, anyone outside a car. We help you understand what's
+    moving, when to show up, and how to be heard.
+  </p>
+  <a class="btn-primary" href="/bills/">See active bills →</a>
+</section>
+
+<section class="bills-section">
+  <div class="container">
+    <div class="section-label">Active &amp; recent</div>
+    <h2 class="section-title">Bills we're tracking</h2>
+    <div class="divider"></div>
+
+    <div class="bill-list">
+      {% for bill in collections.bill %}
+        <a class="bill-card" href="{{ bill.url }}">
+          <span class="bill-card-status {{ bill.data.status | statusClass }}">{{ bill.data.status | statusLabel }}</span>
+          <h3>{{ bill.data.title }}</h3>
+          <p>{{ bill.data.oneLiner }}</p>
+        </a>
+      {% endfor %}
+    </div>
+  </div>
+</section>

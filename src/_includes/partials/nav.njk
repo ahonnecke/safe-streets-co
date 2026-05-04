@@ -1,0 +1,14 @@
+{# Sitewide nav. Optional pageNav (array of {label,href}) appends bill-page anchors. #}
+<nav>
+  <a class="nav-logo" href="/">{{ site.name }}</a>
+  <ul class="nav-links">
+    {% for link in site.nav %}
+      <li><a href="{{ link.href }}">{{ link.label }}</a></li>
+    {% endfor %}
+    {% if pageNav %}
+      {% for link in pageNav %}
+        <li><a href="{{ link.href }}"{% if link.cta %} class="nav-cta"{% endif %}>{{ link.label }}{% if link.cta %} →{% endif %}</a></li>
+      {% endfor %}
+    {% endif %}
+  </ul>
+</nav>

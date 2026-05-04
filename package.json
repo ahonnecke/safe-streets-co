@@ -1,0 +1,14 @@
+{
+  "name": "safe-streets-co",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Safe Streets Co. — Colorado-first traffic safety advocacy site",
+  "scripts": {
+    "build": "eleventy",
+    "dev": "eleventy --serve --quiet"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^3.0.0"
+  }
+}

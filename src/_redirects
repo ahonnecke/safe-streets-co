@@ -1,0 +1,6 @@
+# Legacy URL → new structure
+/HB26-1318/* /bills/co/HB26-1318/:splat 301
+/HB26-1318 /bills/co/HB26-1318/ 301
+
+# /bills/ → /bills/co/ (until we have multiple jurisdictions)
+# Removed for now: keep /bills/ as the all-bills index page.

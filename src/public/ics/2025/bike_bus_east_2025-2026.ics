@@ -1,0 +1,203 @@
+BEGIN:VCALENDAR
+PRODID:-//ChatGPT//Brown Elementary Bike Bus//EN
+VERSION:2.0
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Bike Bus East 2025–2026
+X-WR-TIMEZONE:America/Denver
+BEGIN:VEVENT
+UID:brown-bike-bus-east-20250827-0715@brownbikebus.com
+DTSTAMP:20250826T150205Z
+DTSTART;TZID=America/Denver:20250827T071500
+DTEND;TZID=America/Denver:20250827T074000
+SUMMARY:Bike Bus East
+DESCRIPTION:Both Groups: Meet 7:15 AM\, Roll out 7:22 AM.\n\nFrom the East: Meet at Snarf’s Parking Lot\, just north of W 25th Ave. & Federal Blvd. — ~1/2 mile ride to Brown (about a 10 minute ride).\n\nRider Guidelines:\n- 2nd grade and older confident riders who understand road rules (stop signs\, look both ways\, ride on the right) may be dropped off to ride with the group.\n- ECE\, Kindergarten\, and 1st grade riders should have a parent ride with them.\n- Participation indicates agreement to our terms and liability waiver.\n\nCancellations: If the ride is cancelled due to weather\, we will update the website: https://www.brownbikebus.com/\n\nMap: https://maps.app.goo.gl/5BQgLtZ7zxnZUEQD9
+LOCATION:Snarf’s Parking Lot\, just north of W 25th Ave. & Federal Blvd. (https://maps.app.goo.gl/5BQgLtZ7zxnZUEQD9)
+URL:https://www.brownbikebus.com/
+BEGIN:VALARM
+TRIGGER:-P1D
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:brown-bike-bus-east-20250910-0715@brownbikebus.com
+DTSTAMP:20250826T150205Z
+DTSTART;TZID=America/Denver:20250910T071500
+DTEND;TZID=America/Denver:20250910T074000
+SUMMARY:Bike Bus East
+DESCRIPTION:Both Groups: Meet 7:15 AM\, Roll out 7:22 AM.\n\nFrom the East: Meet at Snarf’s Parking Lot\, just north of W 25th Ave. & Federal Blvd. — ~1/2 mile ride to Brown (about a 10 minute ride).\n\nRider Guidelines:\n- 2nd grade and older confident riders who understand road rules (stop signs\, look both ways\, ride on the right) may be dropped off to ride with the group.\n- ECE\, Kindergarten\, and 1st grade riders should have a parent ride with them.\n- Participation indicates agreement to our terms and liability waiver.\n\nCancellations: If the ride is cancelled due to weather\, we will update the website: https://www.brownbikebus.com/\n\nMap: https://maps.app.goo.gl/5BQgLtZ7zxnZUEQD9
+LOCATION:Snarf’s Parking Lot\, just north of W 25th Ave. & Federal Blvd. (https://maps.app.goo.gl/5BQgLtZ7zxnZUEQD9)
+URL:https://www.brownbikebus.com/
+BEGIN:VALARM
+TRIGGER:-P1D
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:brown-bike-bus-east-20250924-0715@brownbikebus.com
+DTSTAMP:20250826T150205Z
+DTSTART;TZID=America/Denver:20250924T071500
+DTEND;TZID=America/Denver:20250924T074000
+SUMMARY:Bike Bus East
+DESCRIPTION:Both Groups: Meet 7:15 AM\, Roll out 7:22 AM.\n\nFrom the East: Meet at Snarf’s Parking Lot\, just north of W 25th Ave. & Federal Blvd. — ~1/2 mile ride to Brown (about a 10 minute ride).\n\nRider Guidelines:\n- 2nd grade and older confident riders who understand road rules (stop signs\, look both ways\, ride on the right) may be dropped off to ride with the group.\n- ECE\, Kindergarten\, and 1st grade riders should have a parent ride with them.\n- Participation indicates agreement to our terms and liability waiver.\n\nCancellations: If the ride is cancelled due to weather\, we will update the website: https://www.brownbikebus.com/\n\nMap: https://maps.app.goo.gl/5BQgLtZ7zxnZUEQD9
+LOCATION:Snarf’s Parking Lot\, just north of W 25th Ave. & Federal Blvd. (https://maps.app.goo.gl/5BQgLtZ7zxnZUEQD9)
+URL:https://www.brownbikebus.com/
+BEGIN:VALARM
+TRIGGER:-P1D
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:brown-bike-bus-east-20251008-0715@brownbikebus.com
+DTSTAMP:20250826T150205Z
+DTSTART;TZID=America/Denver:20251008T071500
+DTEND;TZID=America/Denver:20251008T074000
+SUMMARY:Bike Bus East (Bike/Walk to School Day)
+DESCRIPTION:Both Groups: Meet 7:15 AM\, Roll out 7:22 AM.\n\nFrom the East: Meet at Snarf’s Parking Lot\, just north of W 25th Ave. & Federal Blvd. — ~1/2 mile ride to Brown (about a 10 minute ride).\n\nRider Guidelines:\n- 2nd grade and older confident riders who understand road rules (stop signs\, look both ways\, ride on the right) may be dropped off to ride with the group.\n- ECE\, Kindergarten\, and 1st grade riders should have a parent ride with them.\n- Participation indicates agreement to our terms and liability waiver.\n\nCancellations: If the ride is cancelled due to weather\, we will update the website: https://www.brownbikebus.com/\n\nMap: https://maps.app.goo.gl/5BQgLtZ7zxnZUEQD9
+LOCATION:Snarf’s Parking Lot\, just north of W 25th Ave. & Federal Blvd. (https://maps.app.goo.gl/5BQgLtZ7zxnZUEQD9)
+URL:https://www.brownbikebus.com/
+BEGIN:VALARM
+TRIGGER:-P1D
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:brown-bike-bus-east-20251112-0715@brownbikebus.com
+DTSTAMP:20250826T150205Z
+DTSTART;TZID=America/Denver:20251112T071500
+DTEND;TZID=America/Denver:20251112T074000
+SUMMARY:Bike Bus East
+DESCRIPTION:Both Groups: Meet 7:15 AM\, Roll out 7:22 AM.\n\nFrom the East: Meet at Snarf’s Parking Lot\, just north of W 25th Ave. & Federal Blvd. — ~1/2 mile ride to Brown (about a 10 minute ride).\n\nRider Guidelines:\n- 2nd grade and older confident riders who understand road rules (stop signs\, look both ways\, ride on the right) may be dropped off to ride with the group.\n- ECE\, Kindergarten\, and 1st grade riders should have a parent ride with them.\n- Participation indicates agreement to our terms and liability waiver.\n\nCancellations: If the ride is cancelled due to weather\, we will update the website: https://www.brownbikebus.com/\n\nMap: https://maps.app.goo.gl/5BQgLtZ7zxnZUEQD9
+LOCATION:Snarf’s Parking Lot\, just north of W 25th Ave. & Federal Blvd. (https://maps.app.goo.gl/5BQgLtZ7zxnZUEQD9)
+URL:https://www.brownbikebus.com/
+BEGIN:VALARM
+TRIGGER:-P1D
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:brown-bike-bus-east-20251203-0715@brownbikebus.com
+DTSTAMP:20250826T150205Z
+DTSTART;TZID=America/Denver:20251203T071500
+DTEND;TZID=America/Denver:20251203T074000
+SUMMARY:Bike Bus East
+DESCRIPTION:Both Groups: Meet 7:15 AM\, Roll out 7:22 AM.\n\nFrom the East: Meet at Snarf’s Parking Lot\, just north of W 25th Ave. & Federal Blvd. — ~1/2 mile ride to Brown (about a 10 minute ride).\n\nRider Guidelines:\n- 2nd grade and older confident riders who understand road rules (stop signs\, look both ways\, ride on the right) may be dropped off to ride with the group.\n- ECE\, Kindergarten\, and 1st grade riders should have a parent ride with them.\n- Participation indicates agreement to our terms and liability waiver.\n\nCancellations: If the ride is cancelled due to weather\, we will update the website: https://www.brownbikebus.com/\n\nMap: https://maps.app.goo.gl/5BQgLtZ7zxnZUEQD9
+LOCATION:Snarf’s Parking Lot\, just north of W 25th Ave. & Federal Blvd. (https://maps.app.goo.gl/5BQgLtZ7zxnZUEQD9)
+URL:https://www.brownbikebus.com/
+BEGIN:VALARM
+TRIGGER:-P1D
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:brown-bike-bus-east-20260128-0715@brownbikebus.com
+DTSTAMP:20250826T150205Z
+DTSTART;TZID=America/Denver:20260128T071500
+DTEND;TZID=America/Denver:20260128T074000
+SUMMARY:Bike Bus East
+DESCRIPTION:Both Groups: Meet 7:15 AM\, Roll out 7:22 AM.\n\nFrom the East: Meet at Snarf’s Parking Lot\, just north of W 25th Ave. & Federal Blvd. — ~1/2 mile ride to Brown (about a 10 minute ride).\n\nRider Guidelines:\n- 2nd grade and older confident riders who understand road rules (stop signs\, look both ways\, ride on the right) may be dropped off to ride with the group.\n- ECE\, Kindergarten\, and 1st grade riders should have a parent ride with them.\n- Participation indicates agreement to our terms and liability waiver.\n\nCancellations: If the ride is cancelled due to weather\, we will update the website: https://www.brownbikebus.com/\n\nMap: https://maps.app.goo.gl/5BQgLtZ7zxnZUEQD9
+LOCATION:Snarf’s Parking Lot\, just north of W 25th Ave. & Federal Blvd. (https://maps.app.goo.gl/5BQgLtZ7zxnZUEQD9)
+URL:https://www.brownbikebus.com/
+BEGIN:VALARM
+TRIGGER:-P1D
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:brown-bike-bus-east-20260225-0715@brownbikebus.com
+DTSTAMP:20250826T150205Z
+DTSTART;TZID=America/Denver:20260225T071500
+DTEND;TZID=America/Denver:20260225T074000
+SUMMARY:Bike Bus East
+DESCRIPTION:Both Groups: Meet 7:15 AM\, Roll out 7:22 AM.\n\nFrom the East: Meet at Snarf’s Parking Lot\, just north of W 25th Ave. & Federal Blvd. — ~1/2 mile ride to Brown (about a 10 minute ride).\n\nRider Guidelines:\n- 2nd grade and older confident riders who understand road rules (stop signs\, look both ways\, ride on the right) may be dropped off to ride with the group.\n- ECE\, Kindergarten\, and 1st grade riders should have a parent ride with them.\n- Participation indicates agreement to our terms and liability waiver.\n\nCancellations: If the ride is cancelled due to weather\, we will update the website: https://www.brownbikebus.com/\n\nMap: https://maps.app.goo.gl/5BQgLtZ7zxnZUEQD9
+LOCATION:Snarf’s Parking Lot\, just north of W 25th Ave. & Federal Blvd. (https://maps.app.goo.gl/5BQgLtZ7zxnZUEQD9)
+URL:https://www.brownbikebus.com/
+BEGIN:VALARM
+TRIGGER:-P1D
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:brown-bike-bus-east-20260325-0715@brownbikebus.com
+DTSTAMP:20250826T150205Z
+DTSTART;TZID=America/Denver:20260325T071500
+DTEND;TZID=America/Denver:20260325T074000
+SUMMARY:Bike Bus East
+DESCRIPTION:Both Groups: Meet 7:15 AM\, Roll out 7:22 AM.\n\nFrom the East: Meet at Snarf’s Parking Lot\, just north of W 25th Ave. & Federal Blvd. — ~1/2 mile ride to Brown (about a 10 minute ride).\n\nRider Guidelines:\n- 2nd grade and older confident riders who understand road rules (stop signs\, look both ways\, ride on the right) may be dropped off to ride with the group.\n- ECE\, Kindergarten\, and 1st grade riders should have a parent ride with them.\n- Participation indicates agreement to our terms and liability waiver.\n\nCancellations: If the ride is cancelled due to weather\, we will update the website: https://www.brownbikebus.com/\n\nMap: https://maps.app.goo.gl/5BQgLtZ7zxnZUEQD9
+LOCATION:Snarf’s Parking Lot\, just north of W 25th Ave. & Federal Blvd. (https://maps.app.goo.gl/5BQgLtZ7zxnZUEQD9)
+URL:https://www.brownbikebus.com/
+BEGIN:VALARM
+TRIGGER:-P1D
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:brown-bike-bus-east-20260408-0715@brownbikebus.com
+DTSTAMP:20250826T150205Z
+DTSTART;TZID=America/Denver:20260408T071500
+DTEND;TZID=America/Denver:20260408T074000
+SUMMARY:Bike Bus East
+DESCRIPTION:Both Groups: Meet 7:15 AM\, Roll out 7:22 AM.\n\nFrom the East: Meet at Snarf’s Parking Lot\, just north of W 25th Ave. & Federal Blvd. — ~1/2 mile ride to Brown (about a 10 minute ride).\n\nRider Guidelines:\n- 2nd grade and older confident riders who understand road rules (stop signs\, look both ways\, ride on the right) may be dropped off to ride with the group.\n- ECE\, Kindergarten\, and 1st grade riders should have a parent ride with them.\n- Participation indicates agreement to our terms and liability waiver.\n\nCancellations: If the ride is cancelled due to weather\, we will update the website: https://www.brownbikebus.com/\n\nMap: https://maps.app.goo.gl/5BQgLtZ7zxnZUEQD9
+LOCATION:Snarf’s Parking Lot\, just north of W 25th Ave. & Federal Blvd. (https://maps.app.goo.gl/5BQgLtZ7zxnZUEQD9)
+URL:https://www.brownbikebus.com/
+BEGIN:VALARM
+TRIGGER:-P1D
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:brown-bike-bus-east-20260422-0715@brownbikebus.com
+DTSTAMP:20250826T150205Z
+DTSTART;TZID=America/Denver:20260422T071500
+DTEND;TZID=America/Denver:20260422T074000
+SUMMARY:Bike Bus East
+DESCRIPTION:Both Groups: Meet 7:15 AM\, Roll out 7:22 AM.\n\nFrom the East: Meet at Snarf’s Parking Lot\, just north of W 25th Ave. & Federal Blvd. — ~1/2 mile ride to Brown (about a 10 minute ride).\n\nRider Guidelines:\n- 2nd grade and older confident riders who understand road rules (stop signs\, look both ways\, ride on the right) may be dropped off to ride with the group.\n- ECE\, Kindergarten\, and 1st grade riders should have a parent ride with them.\n- Participation indicates agreement to our terms and liability waiver.\n\nCancellations: If the ride is cancelled due to weather\, we will update the website: https://www.brownbikebus.com/\n\nMap: https://maps.app.goo.gl/5BQgLtZ7zxnZUEQD9
+LOCATION:Snarf’s Parking Lot\, just north of W 25th Ave. & Federal Blvd. (https://maps.app.goo.gl/5BQgLtZ7zxnZUEQD9)
+URL:https://www.brownbikebus.com/
+BEGIN:VALARM
+TRIGGER:-P1D
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:brown-bike-bus-east-20260506-0715@brownbikebus.com
+DTSTAMP:20250826T150205Z
+DTSTART;TZID=America/Denver:20260506T071500
+DTEND;TZID=America/Denver:20260506T074000
+SUMMARY:Bike Bus East (Bike to School Day)
+DESCRIPTION:Both Groups: Meet 7:15 AM\, Roll out 7:22 AM.\n\nFrom the East: Meet at Snarf’s Parking Lot\, just north of W 25th Ave. & Federal Blvd. — ~1/2 mile ride to Brown (about a 10 minute ride).\n\nRider Guidelines:\n- 2nd grade and older confident riders who understand road rules (stop signs\, look both ways\, ride on the right) may be dropped off to ride with the group.\n- ECE\, Kindergarten\, and 1st grade riders should have a parent ride with them.\n- Participation indicates agreement to our terms and liability waiver.\n\nCancellations: If the ride is cancelled due to weather\, we will update the website: https://www.brownbikebus.com/\n\nMap: https://maps.app.goo.gl/5BQgLtZ7zxnZUEQD9
+LOCATION:Snarf’s Parking Lot\, just north of W 25th Ave. & Federal Blvd. (https://maps.app.goo.gl/5BQgLtZ7zxnZUEQD9)
+URL:https://www.brownbikebus.com/
+BEGIN:VALARM
+TRIGGER:-P1D
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:brown-bike-bus-east-20260520-0715@brownbikebus.com
+DTSTAMP:20250826T150205Z
+DTSTART;TZID=America/Denver:20260520T071500
+DTEND;TZID=America/Denver:20260520T074000
+SUMMARY:Bike Bus East
+DESCRIPTION:Both Groups: Meet 7:15 AM\, Roll out 7:22 AM.\n\nFrom the East: Meet at Snarf’s Parking Lot\, just north of W 25th Ave. & Federal Blvd. — ~1/2 mile ride to Brown (about a 10 minute ride).\n\nRider Guidelines:\n- 2nd grade and older confident riders who understand road rules (stop signs\, look both ways\, ride on the right) may be dropped off to ride with the group.\n- ECE\, Kindergarten\, and 1st grade riders should have a parent ride with them.\n- Participation indicates agreement to our terms and liability waiver.\n\nCancellations: If the ride is cancelled due to weather\, we will update the website: https://www.brownbikebus.com/\n\nMap: https://maps.app.goo.gl/5BQgLtZ7zxnZUEQD9
+LOCATION:Snarf’s Parking Lot\, just north of W 25th Ave. & Federal Blvd. (https://maps.app.goo.gl/5BQgLtZ7zxnZUEQD9)
+URL:https://www.brownbikebus.com/
+BEGIN:VALARM
+TRIGGER:-P1D
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+END:VALARM
+END:VEVENT
+END:VCALENDAR
