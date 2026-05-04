@@ -6,9 +6,12 @@
   "description": "Safe Streets Co. — Colorado-first traffic safety advocacy site",
   "scripts": {
     "build": "eleventy",
-    "dev": "eleventy --serve --quiet"
+    "dev": "eleventy --serve --quiet",
+    "deploy": "npm run build && wrangler deploy",
+    "preview": "npm run build && wrangler dev"
   },
   "devDependencies": {
-    "@11ty/eleventy": "^3.0.0"
+    "@11ty/eleventy": "^3.0.0",
+    "wrangler": "^4.87.0"
   }
 }
